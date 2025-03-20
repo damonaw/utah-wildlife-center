@@ -19,10 +19,13 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 #app {
@@ -63,9 +66,9 @@ header .container {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
     border: 2px solid var(--white-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .logo-text {
@@ -73,10 +76,6 @@ header .container {
     font-weight: 700;
     color: var(--white-color);
     white-space: nowrap;
-}
-
-.logo img:hover {
-    transform: scale(1.05);
 }
 
 nav {
@@ -104,25 +103,25 @@ nav ul li a {
     font-weight: 500;
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+.social-media a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Active link styles */
-nav ul li a.router-link-active {
+nav ul li a.router-link-active,
+nav ul li a.router-link-exact-active {
     background-color: var(--secondary-color);
 }
 
 nav ul li a.router-link-exact-active {
-    background-color: var(--secondary-color);
     font-weight: 700;
 }
 
-/* Remove active state from home link when on other pages */
 nav ul li:first-child a.router-link-active:not(.router-link-exact-active) {
     background-color: transparent;
 }
@@ -431,12 +430,6 @@ footer {
     border-radius: 50%;
 }
 
-.social-media a:hover {
-    color: var(--secondary-color);
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header .container {
@@ -500,20 +493,20 @@ footer {
         font-size: 1rem;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .content-section h2 {
-        font-size: 2rem;
-    }
-
     .hero-stats,
     .team-grid,
     .mission-goals,
     .card-container,
     .events-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
     }
 }
 
